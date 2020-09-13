@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:context="http://www.springframework.org/schema/context"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+        https://www.springframework.org/schema/beans/spring-beans.xsd
+        http://www.springframework.org/schema/context
+        http://www.springframework.org/schema/context/spring-context.xsd" >
+
+    <!--A: Bean definition for the container to recognize  @PostConstruct and  @PreDestroy annotations -->
+    <!--<bean class="org.springframework.context.annotation.CommonAnnotationBeanPostProcessor"/>
+    -->
+
+    <!--B: This tag activates the spring infrastructure for various annotations
+        to be detected in bean classes like @Autowired, @PostConstruct annotations etc.-->
+    <!--<context:annotation-config/>
+    -->
+
+    <!--C: To enable component scanning in XML we have to add the tag for component scanning.
+        Component-scan implicitly enables the functionality of the context:annotation-config.
+     -->
+    <!--<context:component-scan base-package="academy.learnprogramming"/>
+    -->
+
+
+    <!--<bean id="numberGenerator" class="academy.learnprogramming.game.NumberGeneratorImpl"/>
+    -->
+
+    <!--<bean id="game" class="academy.learnprogramming.game.GameImpl" >
+    -->
+            <!--Constructor Based Dependency Injection-->
+            <!--for mandatory dependencies -->
+            <!--<constructor-arg ref="numberGenerator"/>-->
+
+            <!--Setter Based Dependency Injection-->
+            <!--for optional dependencies -->
+            <!--<property name="fieldNameOnGameImpl(numberGenerator)" ref="numberGenerator" /> -->
+
+    <!--</bean>
+    -->
+
+</beans>
