@@ -2,8 +2,7 @@ package academy.learnprogramming.main;
 
 import academy.learnprogramming.game.Game;
 import academy.learnprogramming.game.MessageGenerator;
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
+import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.event.ContextRefreshedEvent;
 import org.springframework.context.event.EventListener;
@@ -19,12 +18,13 @@ import java.util.Scanner;
     B: Instead of implementing the ApplicationListener interface, spring provides the @EventListener annotation
     that we can add under the method that's going to be executed once the event gets fired.
  */
+@Slf4j
 @Component
 public class ConsoleNumberGuessContextListener {
     //implements ApplicationListener<ContextRefreshedEvent> {
 
     // == constants ==
-    private static final Logger logger = LoggerFactory.getLogger(ConsoleNumberGuessContextListener.class);
+    //private static final Logger log = LoggerFactory.getLogger(ConsoleNumberGuessContextListener.class);
 
     // == fields ==
     private final Game game;
@@ -71,7 +71,7 @@ public class ConsoleNumberGuessContextListener {
     @EventListener(ContextRefreshedEvent.class)
     public void myEventListenerMethod() {
 
-        logger.info(" ConsoleNumberGuess, myEventListenerMethod(). Container ready for use. ");
+        log.info("Container ready for use.");
 
         /*
             Loop breaks when the player stops the game.

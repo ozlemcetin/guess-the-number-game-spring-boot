@@ -1,20 +1,20 @@
 package academy.learnprogramming.main;
 
 import academy.learnprogramming.config.AppConfig;
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
+import lombok.extern.slf4j.Slf4j;
 import org.springframework.context.ConfigurableApplicationContext;
 import org.springframework.context.annotation.AnnotationConfigApplicationContext;
 
+@Slf4j
 public class MainContextCreation {
 
     // == constants ==
-    private static final Logger logger = LoggerFactory.getLogger(MainContextCreation.class);
+    //private static final org.slf4j.Logger log = org.slf4j.LoggerFactory.getLogger(MainContextCreation.class);
     //private static final String BEAN_CONFIG_LOCATION = "beans.xml";
 
     public static void main(String[] args) {
 
-        logger.info("Guess The Number Game Main Method For Beans ");
+        log.info("Guess The Number Game Main Method");
 
         //create spring context (container)
         ConfigurableApplicationContext context

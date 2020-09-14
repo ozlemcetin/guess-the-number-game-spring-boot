@@ -2,6 +2,7 @@ package academy.learnprogramming.game;
 
 import academy.learnprogramming.annotations.MaxNumber;
 import academy.learnprogramming.annotations.MinNumber;
+import lombok.Getter;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
@@ -9,6 +10,7 @@ import java.util.concurrent.ThreadLocalRandom;
 
 //@Component("numberGenerator")
 @Component
+@Getter
 public class NumberGeneratorImpl implements NumberGenerator {
 
     // == fields ==
@@ -32,6 +34,7 @@ public class NumberGeneratorImpl implements NumberGenerator {
         return ThreadLocalRandom.current().nextInt(minNumber, maxNumber + 1);
     }
 
+    /*
     @Override
     public int getMaxNumber() {
         return maxNumber;
@@ -42,4 +45,6 @@ public class NumberGeneratorImpl implements NumberGenerator {
     public int getMinNumber() {
         return minNumber;
     }
+    */
+
 }
