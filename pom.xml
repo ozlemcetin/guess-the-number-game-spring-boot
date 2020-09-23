@@ -4,6 +4,13 @@
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
 
+    <parent>
+        <groupId>org.springframework.boot</groupId>
+        <artifactId>spring-boot-starter-parent</artifactId>
+        <version>2.3.4.RELEASE</version>
+        <relativePath/> <!-- lookup parent from repository -->
+    </parent>
+
     <groupId>academy.learnprogramming</groupId>
     <artifactId>guess-the-number-game</artifactId>
     <version>1.0-SNAPSHOT</version>
@@ -12,78 +19,16 @@
     <modules>
         <module>core</module>
         <module>console</module>
+        <module>web</module>
     </modules>
 
     <!-- This is parent/pom project.
         Pom is basically a container for submodules.-->
     <packaging>pom</packaging>
 
-    <!--Maven properties are value placeholder.
-    Their values are accessible anywhere within a POM by
-    using the notation ${X}, where X is the property. -->
     <properties>
-        <logback.version>1.2.3</logback.version>
-        <spring.context.version>5.0.5.RELEASE</spring.context.version>
-        <javax.annotation.version>1.3.2</javax.annotation.version>
-        <lombok.version>1.18.12</lombok.version>
         <java.version>11</java.version>
     </properties>
 
-    <!--dependencyManagement: is used by a POM to help manage dependency information
-    across all of its children. If the my-parent project uses dependencyManagement
-    to define a dependency on junit:junit:4.12, then POMs inheriting from this one
-    can set their dependency giving the groupId=junit and artifactId=junit only and
-    Maven will fill in the version set by the parent. -->
-    <dependencyManagement>
-
-        <dependencies>
-
-            <!-- https://mvnrepository.com/artifact/ch.qos.logback/logback-classic -->
-            <dependency>
-                <groupId>ch.qos.logback</groupId>
-                <artifactId>logback-classic</artifactId>
-                <version>${logback.version}</version>
-                <!-- <scope>test</scope> -->
-            </dependency>
-
-            <!-- https://mvnrepository.com/artifact/org.springframework/spring-context -->
-            <dependency>
-                <groupId>org.springframework</groupId>
-                <artifactId>spring-context</artifactId>
-                <version>${spring.context.version}</version>
-            </dependency>
-
-            <!-- https://mvnrepository.com/artifact/javax.annotation/javax.annotation-api -->
-            <dependency>
-                <groupId>javax.annotation</groupId>
-                <artifactId>javax.annotation-api</artifactId>
-                <version>${javax.annotation.version}</version>
-            </dependency>
-
-            <!-- https://mvnrepository.com/artifact/org.projectlombok/lombok -->
-            <dependency>
-                <groupId>org.projectlombok</groupId>
-                <artifactId>lombok</artifactId>
-                <version>${lombok.version}</version>
-                <!--<scope>provided</scope>-->
-            </dependency>
-
-        </dependencies>
-    </dependencyManagement>
-
-    <build>
-        <plugins>
-            <plugin>
-                <groupId>org.apache.maven.plugins</groupId>
-                <artifactId>maven-compiler-plugin</artifactId>
-                <version>3.7.0</version>
-                <configuration>
-                    <target>${java.version}</target>
-                    <source>$java.version}</source>
-                    <release>${java.version}</release>
-                </configuration>
-            </plugin>
-        </plugins>
-    </build>
 
 </project>

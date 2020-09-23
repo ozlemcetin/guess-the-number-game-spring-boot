@@ -16,14 +16,6 @@ import javax.annotation.PreDestroy;
 @Component
 public class GameImpl implements Game {
 
-    // == constants ==
-    //private static final Logger log = LoggerFactory.getLogger(GameImpl.class);
-
-    /*
-        @Getter(AccessLevel.NONE)
-        Lombok won't generate a getter for the numberGenerator
-     */
-
     // == fields ==
     @Getter(AccessLevel.NONE)
     private final NumberGenerator numberGenerator;
@@ -40,7 +32,6 @@ public class GameImpl implements Game {
     private boolean validNumberRange;
 
     // == constructors ==
-
     @Autowired
     public GameImpl(NumberGenerator numberGenerator, @GuessCount int guessCount) {
         this.numberGenerator = numberGenerator;
@@ -48,7 +39,6 @@ public class GameImpl implements Game {
     }
 
     // == init methods (bean lifecycle callbacks)==
-
     @PostConstruct
     @Override
     public void reset() {
@@ -71,7 +61,6 @@ public class GameImpl implements Game {
     }
 
     // == public methods ==
-
     @Override
     public void check() {
 

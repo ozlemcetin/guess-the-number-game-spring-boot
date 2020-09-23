@@ -1,0 +1,25 @@
+<thlogic>
+    <attr sel="#head"
+          th:replace="~{fragments/html-head::htmlHeadFragment}"/>
+
+    <attr sel="#header"
+          th:replace="~{fragments/body-header::bodyHeaderFragment}"/>
+
+    <attr sel="#game-over-header"
+          th:text="#{game.over.text}"/>
+
+    <attr sel="#result-message"
+          th:text="${__${T(academy.learnprogramming.util.AttributeNames).RESULT_MESSAGE}__}"/>
+
+    <attr sel="#play-again"
+          th:href="@{__${T(academy.learnprogramming.util.MappingNames).RESET_MAPPING}__}"
+            th:text="#{play.again.text}"/>
+
+    <attr sel="#return-home"
+          th:href="@{__${T(academy.learnprogramming.util.MappingNames).HOME_MAPPING}__}"
+            th:text="#{return.home.text}"/>
+
+    <attr sel="#footer"
+          th:replace="~{fragments/body-footer::bodyFooterFragment}"/>
+
+</thlogic>

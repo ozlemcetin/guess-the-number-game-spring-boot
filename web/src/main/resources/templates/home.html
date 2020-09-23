@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head th:replace="~{fragments/html-head::htmlHeadFragment}">
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+<header th:replace="~{fragments/body-header::bodyHeaderFragment}">
+    header goes here
+</header>
+
+<div>
+
+    <!--
+       pre-processing is an execution of expressions done before the normal expression execution
+       pre-processed expressions are exactly like normal expressions but
+       they are surrounded with double underscores  -->
+
+    <!-- T operator from the Spring Framework can be used to specify an instance of a Java class,
+        can be used to invoke static methods, to get the values of static variables-->
+
+    <!--@ and curly braces is a special syntax in Thymeleaf for URLs
+       So inside the curly braces we can add the double underscore and the constant-->
+
+    <a href="#"
+       th:href="@{__${T(academy.learnprogramming.util.MappingNames).PLAY_MAPPING}__}"
+       th:text="#{click.play.text}">Play</a>
+
+</div>
+
+<footer th:replace="~{fragments/body-footer::bodyFooterFragment}">
+    footer goes here
+</footer>
+
+</body>
+</html>
